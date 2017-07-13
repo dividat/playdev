@@ -1,0 +1,13 @@
+{
+  "name": "playdev",
+  "version": "1.0.0",
+  "description": "Play[dev] - Game developement environement for Dividat Play",
+  "main": "index.js",
+  "bin": "./index.js",
+  "repository": "https://github.com/dividat/playdev",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.15.3",
+    "minimist": "^1.2.0"
+  }
+}
