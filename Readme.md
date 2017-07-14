@@ -14,9 +14,21 @@ TODO: Brief technical description of EGI.
 
 ## Installation
 
+Once this is published to npmjs.org:
+
     npm install -g playdev
 
+For now:
+
+-   Clone from github
+-   Install dependencies: `yarn`
+-   Link to make binary usable globally: `npm link`
+
 ## Usage
+
+    playdev (<directory>|<url>)
+
+You may provide a directory where your game is located or an url where your game is hosted. `playdev` will start a local development server with the EGI and load your game in an iframe.
 
 ### [Examples](examples)
 
