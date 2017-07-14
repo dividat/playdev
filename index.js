@@ -1,8 +1,12 @@
 #!env node
-const express = require('express')
-const app = express()
 const path = require('path')
 const fs = require('fs')
+
+const express = require('express')
+const app = express()
+
+const opn = require('opn')
+
 const argv = require('minimist')(process.argv.slice(2))
 
 async function startServer () {
@@ -20,6 +24,7 @@ async function startServer () {
 
   app.listen(8388, function () {
     console.log('http://localhost:8388/')
+    opn('http://localhost:8388')
   })
 }
 
