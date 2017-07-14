@@ -1,7 +1,7 @@
 {
   "name": "playdev",
   "version": "1.0.0",
-  "description": "Play[dev] - Game developement environement for Dividat Play",
+  "description": "Play[dev] - Game development environment for Dividat Play",
   "main": "index.js",
   "bin": "./index.js",
   "repository": "https://github.com/dividat/playdev",
