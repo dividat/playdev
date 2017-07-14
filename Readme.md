@@ -1,4 +1,4 @@
-# ![Play\[dev\]](images/logo-play-dev.svg)
+# ![Play\[dev\]](images/logo-play-dev.png)
 
 Play[dev] is a tool for developing games for Dividat Play.
 
