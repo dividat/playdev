@@ -9,7 +9,7 @@ const proxy = require('http-proxy-middleware')
 
 const opn = require('opn')
 
-const argv = require('minimist')(process.argv.slice(2))
+const argv = require('minimist')(process.argv.slice(2), {boolean: ['l']})
 
 async function startServer () {
   // /root - where the game in developement is hosted
