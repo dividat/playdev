@@ -1,32 +1,25 @@
-(ns hello-clojure.core
-  (:require [reagent.core :as r]))
+(ns hello-clojure.core)
 
 (enable-console-print!)
 
-;; define your app data so that it doesn't get over-written on reload
-
-(defonce app-state (atom {:text "Hello world!"}))
-
 (defn on-js-reload []
-  ;; optionally touch your app-state to force rerendering depending on
-  ;; your application
-  ;; (swap! app-state update-in [:__figwheel_counter] inc)
-)
+  (println "Reloaded!")
+  )
 
-(defn view []
-  [:div "hello world"
-   [:input {:type "button" :value "Ready"
-            :on-click #(.ready js/egi)}]
+(defn handle-step [direction]
+  (case direction
+    "Up" (js/PlayEGI.pong)
+    "Down" (js/PlayEGI.finish (js-obj))
+    ()
+  ))
 
-   [:input {:type "button" :value "Suspend"
-            :on-click #(.suspend js/egi)}]
-
-   [:input {:type "button" :value "Abort"
-            :on-click #(.abort js/egi)}]])
-
-(defn ^:export on-egi-signal [signal]
-  ;; This function handles signals comming from EGI and is exposed to JS
+(defn handle-egi-message [signal]
   (case (.-type signal)
-    "Ping" (.pong js/egi)
-    (println (.-type signal))))
-(r/render [view] (.getElementById js/document "app"))
+    "Hello" (js/PlayEGI.ready)
+    "Ping" (js/PlayEGI.pong)
+    "Step" (handle-step (.-direction signal))
+    (println (.-type signal))
+  ))
+
+(js/PlayEGI.onSignal handle-egi-message)
+

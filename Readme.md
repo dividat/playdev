@@ -30,6 +30,9 @@ A development tool that implements the EGI is available at <https://play.dividat
 
 ## [Examples](examples)
 
-Examples are provided to illustrate developement of Games for Play.
+Examples are provided to illustrate developement of Games for Play:
 
-TODO: List of examples and short description.
+- [`hello-clojure`](examples/hello-clojure): A simple ClojureScript app illustrating usage of EGI.
+
+TODO: More examples.
+
