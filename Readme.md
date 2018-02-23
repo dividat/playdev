@@ -1,35 +1,38 @@
 # ![Play\[dev\]](images/logo-play-dev.png)
 
-Play[dev] is a tool for developing games for Dividat Play.
+[Dividat Play](https://dividat.com/en/products/dividat) is a web-based framework for playing games with the [Dividat Senso](https://dividat.com/en/products/dividat) hardware. It is capable of loading and running "external" games (that is games that are not developed in the same codebase). This repository contains documentations and examples on how to develop games for usage with [Didiat Play and Senso](https://dividat.com/en/products/dividat).
 
-## Dividat Play
+## Overview
 
-Dividat Play is a framework for playing games with the [Dividat Senso](https://dividat.com/en/products/dividat).
+![architecture](images/architecture.png)
 
-TODO: some more stuff on why it would be interesting to develop for Dividat Play.
+-   **Play**: Dividat Play is a web application that loads games according to personal training plans and manages hardware connectiviy.
+-   **Game**: The game you are developing can be developed in any language or framework that can target the Web platform (e.g. [Unity](https://unity3d.com/), [Phaser](https://phaser.io/), [ClojureScript](https://clojurescript.org/)). The game connects to Play via a protocol called the _External Game Interface_ (EGI).
+-   **Senso**: Used as controller for the games. Play connects to the Dividat Senso and acts as a proxy between the hardware and your game.
 
-## External Game Interface
+## EGI
 
-TODO: Brief technical description of EGI.
+![EGI protocol sequence chart](images/egi.png)
 
-## Installation
+The Game communicates to Play via a message based protocol. Play sends messages to your game and your game sends messages to Play.
 
-Once this is published to npmjs.org:
+To use the EGI a small JavaScript library must be loaded which is available at <https://play.dividat.com/PlayEGI.js>.
 
-    npm install -g playdev
+TODO: Text description of protocol and JavaScript library.
 
-For now:
+### Under the hood
 
--   Clone from github
--   Install dependencies: `yarn`
--   Link to make binary usable globally: `npm link`
+The game is loaded by Play in an [`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). EGI messages are sent with the [`Window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method.
 
-## Usage
+## Development tool
 
-    playdev (<directory>|<url>)
+A development tool that implements the EGI is available at <https://play.dividat.com/playDev.html>.
 
-You may provide a directory where your game is located or an url where your game is hosted. `playdev` will start a local development server with the EGI and load your game in an iframe.
+## [Examples](examples)
 
-### [Examples](examples)
+Examples are provided to illustrate developement of Games for Play:
 
-## Contact
+- [`hello-clojure`](examples/hello-clojure): A simple ClojureScript app illustrating usage of EGI.
+
+TODO: More examples.
+

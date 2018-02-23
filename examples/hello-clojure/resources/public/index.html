@@ -2,20 +2,29 @@
 <html>
 
 <head>
+  <title>Hello Clojure!</title>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <link rel="icon" href="https://clojurescript.org/images/cljs-logo-icon-32.png">
+  <style>
+    body {margin: 100px}
+  </style>
 </head>
 
 <body>
-  <div id="app">
-  </div>
-  <script src="http://localhost:8388/PlayEGI.js" type="text/javascript"></script>
+  <h1>ClojureScript EGI example</h1>
+  <p>This is a simple ClojureScript application illustrating usage of the External Game Interface (EGI).</p>
+  <p>The current page is loaded in an iframe from Dividat Play. Hardware input signals are forwarded from Play to this iframe and are usable as controls for your own game.</p>
+
+  <ul>
+    <li>Press &darr; for <code>Finish</code>
+  </ul>
+
+  <!--Load the PlayEGI JavaScript library -->
+  <script src="https://play.dividat.com/PlayEGI.js" type="text/javascript"></script>
+
   <script src="js/compiled/hello_clojure.js" type="text/javascript"></script>
-  <script>
-    const egi = PlayEGI(hello_clojure.core.on_egi_signal)
-  </script>
 </body>
 
 </html>

@@ -1,0 +1,10 @@
+digraph arch {
+  rankdir=LR;
+  subgraph cluster_browser {
+    label = "Browser";
+    Play -> Game [dir=both, label="EGI"];
+  }
+  //Backend -> Play [dir=both];
+  Play -> Senso [dir=both];
+}
+

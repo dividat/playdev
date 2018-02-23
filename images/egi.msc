@@ -1,0 +1,60 @@
+msc {
+  hscale = 2;
+
+  Play,Game;
+
+  Play box Game [ label = "Initialization", textbgcolour="#ffd046" ];
+  --- [ label = "Play greets the Game with Hello messages." ];
+  Play=>Game [ label = "Hello" ];
+  ...;
+  --- [ label = "The Hello message is repeated periodically until the game responds with Ready." ];
+  Play=>Game [ label = "Hello" ];
+  --- [ label = "All game assets are loaded and game is ready to start." ];
+  Game=>Play [ label = "Ready" ];
+  --- [ label = "Game is now ready to play but supsended." ];
+
+
+  Play box Game [ label = "Gameplay", textbgcolour="#ffd046" ];
+
+  --- [ label = "Game only starts when it gets initial Resume message from Play" ];
+  Play=>Game [ label = "Resume" ];
+
+  ...;
+  --- [ label = "At a frequency of 50Hz the Game receives raw hardware state" ];
+  Play=>Game [ label = "SensoState" ];
+
+  ...;
+  --- [ label = "A Step message is received when a step is detected." ];
+  Play=>Game [ label = "Step" ];
+
+  ...;
+  --- [ label = "A Release message is received when a foot is lifted (after a step)." ];
+  Play=>Game [ label = "Release" ];
+
+  ...;
+  --- [ label = "The game may activate the feedback motors on the Senso with Motor messages." ];
+  Game=>Play [ label = "Motor" ];
+
+
+  Play box Game [ label = "Suspend", textbgcolour="#ffd046" ];
+
+  --- [ label = "At any time Play may request the game to suspend (pause)." ];
+  Play=>Game [ label = "Suspend" ];
+  --- [ label = "Game should remain supsended until it receives a Resume message." ];
+  Play=>Game [ label = "Resume" ];
+
+
+  Play box Game [ label = "Liveliness checks", textbgcolour="#ffd046" ];
+
+  --- [ label = "To ensure that the Game is still alive and functioning, Play sends periodic Ping messages" ];
+  Play=>Game [  label = "Ping" ];
+  --- [ label = "A ping must be responded with a Pong message in a timely fashion" ];
+  Game=>Play [  label = "Pong" ];
+
+
+  Play box Game [ label = "Finish", textbgcolour="#ffd046" ];
+
+  --- [ label = "Once the Game is completed it sends a Finish message to Play." ];
+  Game=>Play [ label = "Finish" ];
+
+}
