@@ -1,6 +1,6 @@
 # ![Play\[dev\]](images/logo-play-dev.png)
 
-[Dividat Play](https://dividat.com/en/products/dividat) is a web-based framework for playing games with the [Dividat Senso](https://dividat.com/en/products/dividat) hardware. It is capable of loading and running "external" games (that is games that are not developed in the same codebase). This repository contains documentations and examples on how to develop games for usage with [Didiat Play and Senso](https://dividat.com/en/products/dividat).
+[Dividat Play](https://dividat.com/en/products/dividat) is a web-based framework for playing games with the [Dividat Senso](https://dividat.com/en/products/dividat) hardware. It is capable of loading and running "external" games (that is games that are not developed in the same codebase). This repository contains documentations and examples on how to develop games for usage with [Dividat Play and Senso](https://dividat.com/en/products/dividat).
 
 ## Overview
 
