@@ -24,6 +24,10 @@ TODO: Text description of protocol and JavaScript library.
 
 The game is loaded by Play in an [`iframe`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe). EGI messages are sent with the [`Window.postMessage()`](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) method.
 
+## Senso signal
+
+The Senso signal consists of a series of `x`, `y` and `f` measurements for each of the plates. The `x` and `y` values describe a position on the Senso's surface with `(0, 0)` in the upper left and `(3, 3)` in the lower right corner. The `f` value describes the "force" as a number between 0 and 1, where 1 is the maximum force the sensors can theoretically measure.
+
 ## Development tool
 
 A development tool that implements the EGI is available at <https://play.dividat.com/playDev.html>.
