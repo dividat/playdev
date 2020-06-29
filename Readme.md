@@ -32,6 +32,15 @@ The Senso signal consists of a series of `x`, `y` and `f` measurements for each 
 
 A development tool that implements the EGI is available at <https://play.dividat.com/playDev.html>.
 
+### Use without Senso
+
+The PlayDev environment, like the actual Play application, does not forward arbitrary keyboard events when running games. Specific keys are translated and forwarded as Senso inputs:
+
+- The arrow keys for the outer plates
+- The space key for the center plate
+
+Keydown and keyup events are sent as `Step` and `Release` events, respectively.
+
 ## [Examples](examples)
 
 Examples are provided to illustrate developement of Games for Play:
