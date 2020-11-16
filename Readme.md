@@ -16,9 +16,7 @@
 
 The Game communicates to Play via a message based protocol. Play sends messages to your game and your game sends messages to Play.
 
-To use the EGI a small JavaScript library must be loaded which is available at <https://play.dividat.com/PlayEGI.js>.
-
-TODO: Text description of protocol and JavaScript library.
+To use the EGI a small JavaScript library must be loaded which is available at <https://play.dividat.com/PlayEGI.js>. A [description of the library](types/) is available as a TypeScript declaration.
 
 ### Under the hood
 
