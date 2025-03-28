@@ -21,7 +21,7 @@ type Signal
     | { "type": "Resume" }
     | { "type": "Step", direction: Direction, isSynthetic: boolean }
     | { "type": "Release", direction: Direction, isSynthetic: boolean }
-    | { "type": "SensoState", state: SensoState, isSynthetic: boolean }
+    | { "type": "SensoState", state: SensoState }
     ;
 
 type Direction
