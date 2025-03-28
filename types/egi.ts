@@ -19,8 +19,8 @@ type Signal
     | { "type": "Ping" }
     | { "type": "Suspend" }
     | { "type": "Resume" }
-    | { "type": "Step", direction: Direction }
-    | { "type": "Release", direction: Direction }
+    | { "type": "Step", direction: Direction, isSynthetic: boolean }
+    | { "type": "Release", direction: Direction, isSynthetic: boolean }
     | { "type": "SensoState", state: SensoState }
     ;
 
